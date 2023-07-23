@@ -1,23 +1,3 @@
-<?php
-    // $_GET, $_POST = special variables used to collect data from an HTML form
-    //                 data is sent to the file in the action attribute of <form>
-    //                 <form action="some_file.php" method="get">
-
-    //$_GET = Data is appended to the url
-    //        NOT SECURE
-    //        char limit
-    //        Bookmark is possible w/ values
-    //        GET requests can be cached
-    //        Better for a search page
-
-    //$_POST = Data is packaged inside the body of the HTTP request
-    //         MORE SECURE
-    //         No data limit
-    //         Cannot bookmark
-    //         GET requests are not cached
-    //         Better for submitting credentials
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,34 +7,65 @@
 </head>
 <body>
     <!-- <form action="index.php" method="post">
-        <label>username:</label><br>
-        <input type="text" name="username"><br>
-        <label>password:</label><br>
-        <input type="password" name="password"><br>
-        <input type="submit" value="Log in">
+        <label>x:</label>
+        <input type="text" name="x">
+        <label>y:</label>
+        <input type="text" name="y">
+        <label>z:</label>
+        <input type="text" name="z">
+        <input type="submit" value="total">
     </form> -->
 
     <form action="index.php" method="post">
-        <label>quantity: </label><br>
-        <input type="text" name="quantity">
-        <input type="submit" value="total">
+        <label>radius:</label>
+        <input type="text" name="radius">
+        <input type="submit" value="calculate">
     </form>
+
 </body>
 </html>
 
 <?php
 
-    // echo "{$_POST["username"]} <br>";
-    // echo "{$_POST["password"]} <br>";
+    // $x = $_POST["x"];
+    // $y = $_POST["y"];
+    // $z = $_POST["z"];
+    // $total = null;
 
-    $item = "Pizza";
-    $price = 5.99;
-    $quantity = $_POST["quantity"];
+    // $total = abs($x);
+    // $total = round($x);
+    // $total = floor($x);
+    // $total = ceil($x);
+    // $total = sqrt($x);
+    // $total = pow($x, $y);
+    // $total = max($x, $y, $z);
+    // $total = min($x, $y, $z);
+    // $total = pi();
+    // $total = rand();
+    // $total = rand(1, 6);
+    // $total = rand(90, 500);
 
-    $total = $quantity * $price;
+    // echo $total;
 
-    echo "You have ordered {$quantity} x {$item}/s <br>";
-    echo "Your total is \${$total}";
+
+    $radius = $_POST["radius"];
+    $circumference = null;
+    $area = null;
+    $volume = null;
+
+    $circumference = 2 * pi() * $radius;
+    $circumference = round($circumference, 2);
+
+    $area = pi() * pow($radius, 2);
+    $area = round($area, 2);
+
+    $volume = 4/3 * pi() * pow($radius, 3);
+    $volume = round($volume, 2);
+
+
+    echo "Cricumference = {$circumference}cm <br>";
+    echo "Area = {$area}cm^2 <br>";
+    echo "Volume = {$volume}cm^3 <br>";
 
 
 ?>
