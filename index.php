@@ -1,45 +1,21 @@
 <?php
-    // Arithmetic operators
-    // + - * / ** %
+    // $_GET, $_POST = special variables used to collect data from an HTML form
+    //                 data is sent to the file in the action attribute of <form>
+    //                 <form action="some_file.php" method="get">
 
-    $x = 10;
-    $y = 3;
-    $z = null;
+    //$_GET = Data is appended to the url
+    //        NOT SECURE
+    //        char limit
+    //        Bookmark is possible w/ values
+    //        GET requests can be cached
+    //        Better for a search page
 
-    //$z = $x + $y;
-    //$z = $x - $y;
-    //$z = $x * $y;
-    //$z = $x / $y;
-    //$z = $x ** $y;
-    //$z = $x % $y;
-
-    echo $z;
-
-    //Increment/Decrement operators
-
-    $counter = 0;
-
-    //$counter = $counter + 1;
-    //$counter++;
-    //$counter+=2;
-
-    //$counter = $counter - 1;
-    //$counter--;
-    //$counter-=2;
-
-    echo $counter;
-
-    //Operator Precedence
-    // ()
-    // **
-    // * / %
-    // + -
-
-    $total = 1 + 2 - 3 * 4 / 5 ** 6;
-    echo $total;
-
-
-
+    //$_POST = Data is packaged inside the body of the HTTP request
+    //         MORE SECURE
+    //         No data limit
+    //         Cannot bookmark
+    //         GET requests are not cached
+    //         Better for submitting credentials
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +26,35 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- <form action="index.php" method="post">
+        <label>username:</label><br>
+        <input type="text" name="username"><br>
+        <label>password:</label><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Log in">
+    </form> -->
+
+    <form action="index.php" method="post">
+        <label>quantity: </label><br>
+        <input type="text" name="quantity">
+        <input type="submit" value="total">
+    </form>
 </body>
 </html>
+
+<?php
+
+    // echo "{$_POST["username"]} <br>";
+    // echo "{$_POST["password"]} <br>";
+
+    $item = "Pizza";
+    $price = 5.99;
+    $quantity = $_POST["quantity"];
+
+    $total = $quantity * $price;
+
+    echo "You have ordered {$quantity} x {$item}/s <br>";
+    echo "Your total is \${$total}";
+
+
+?>
