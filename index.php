@@ -6,66 +6,59 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <form action="index.php" method="post">
-        <label>x:</label>
-        <input type="text" name="x">
-        <label>y:</label>
-        <input type="text" name="y">
-        <label>z:</label>
-        <input type="text" name="z">
-        <input type="submit" value="total">
-    </form> -->
+    
 
-    <form action="index.php" method="post">
-        <label>radius:</label>
-        <input type="text" name="radius">
-        <input type="submit" value="calculate">
-    </form>
 
 </body>
 </html>
 
 <?php
 
-    // $x = $_POST["x"];
-    // $y = $_POST["y"];
-    // $z = $_POST["z"];
-    // $total = null;
+    // if statement = if some condition is true, do something
+    //                if condition is false, don't do it
 
-    // $total = abs($x);
-    // $total = round($x);
-    // $total = floor($x);
-    // $total = ceil($x);
-    // $total = sqrt($x);
-    // $total = pow($x, $y);
-    // $total = max($x, $y, $z);
-    // $total = min($x, $y, $z);
-    // $total = pi();
-    // $total = rand();
-    // $total = rand(1, 6);
-    // $total = rand(90, 500);
+    // $age = 125;
 
-    // echo $total;
+    // if ($age >= 100){
+    //     echo "You are too old to enter this site";
+    // }
+    // elseif ($age >= 18) {
+    //     echo "You may enter this site";
+    // }
+    // elseif ($age <= 0){
+    //     echo "That wasn't a valid age";
+    // }
+    // else{
+    //     echo "You must be 18+ to enter";
+    // }
 
+    
+    // $adult = true;
 
-    $radius = $_POST["radius"];
-    $circumference = null;
-    $area = null;
-    $volume = null;
-
-    $circumference = 2 * pi() * $radius;
-    $circumference = round($circumference, 2);
-
-    $area = pi() * pow($radius, 2);
-    $area = round($area, 2);
-
-    $volume = 4/3 * pi() * pow($radius, 3);
-    $volume = round($volume, 2);
+    // if($adult) {
+    //     echo "You may enter this site";
+    // }
+    // else{
+    //     echo "You must be an adult to enter";
+    // }
 
 
-    echo "Cricumference = {$circumference}cm <br>";
-    echo "Area = {$area}cm^2 <br>";
-    echo "Volume = {$volume}cm^3 <br>";
+    $hours = 50;
+    $rate = 15;
+    $weekly_pay = null;
+
+
+    if($hours <= 0 ){
+        $weekly_pay = 0;
+    }
+    elseif($hours <= 40){
+        $weekly_pay = $hours * $rate;
+    }
+    else{
+        $weekly_pay = ($rate * 40) + (($hours - 40) * ($rate * 1.5));
+    }
+
+    echo "You made \${$weekly_pay} this week";
 
 
 ?>
