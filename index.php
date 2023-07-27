@@ -14,78 +14,62 @@
 
 <?php
 
-    // Logical operators = combine conditional statements
-    // if(condition1 && condition2)
+    //switch = replacement to using many elseif statements
+    //         more efficient, less code to write
 
-    // && = True if both conditions are true
-    // || = True if at least one condition is true
-    //  ! = True if false. False if true.
+    $grade = "A";
 
-    // $temp = 15;
-
-    // if($temp >= 0 && $temp <= 30){
-    //     echo"The weather is good.";
+    // switch($grade){
+    //     case "A":
+    //         echo"You did great";
+    //         break;
+    //     case "B":
+    //         echo"You did good";
+    //         break;
+    //     case "C":
+    //         echo"You did okay";
+    //         break;
+    //     case "D":
+    //         echo"You did poorly";
+    //         break;
+    //     case "F":
+    //         echo"You failes";
+    //         break;    
+    //     default:
+    //         echo"{$grade} is not valid";
     // }
-    // else{
-    //     echo"The weather is bad.";
-    // }
 
-    // $temp = -100;
-
-    // if($temp < 0 || $temp > 30){
-    //     echo"The weather is bad.";
-    // }
-    // else{
-    //     echo"The weather is good.";
-    // }
     
+    // $date = date("1");   <-This didn't work
 
-    // $temp = 15;
-    // $cloudy = true;
+    $date = "Monday";
 
-    // if($cloudy){
-    //     echo"It's cloudy.";
-    // }
-    // else{
-    //     echo"It's sunny.";
-    // }
-
-    // if(!$cloudy){
-    //     echo"It's sunny.";
-    // }
-    // else{
-    //     echo"It's cloudy.";
-    // }
-
-    // $age = 12;
-    // $citizen = true;
-
-    // if($age >= 18 && $citizen){
-    //     echo"You can vote.";
-    // }
-    // else{
-    //     echo"You cannot vote.";
-    // }
-
-    // if(!($age >= 18) || !$citizen){
-    //     echo"You cannot vote.";
-    // }
-    // else{
-    //     echo"You can vote.";
-    // }
-
-
-    $child = false;
-    $senior = false;
-    $ticket = null;
-
-    if($child || $senior){
-        $ticket = 10;
-    }
-    else{
-        $ticket = 15;
+    switch($date){
+        case "Monday":
+            echo"I hate Mondays";
+            break;
+        case "Tuesday":
+            echo"It is Taco Tuesday!";
+            break;
+        case "Wednesday":
+            echo"The work week is half over";
+            break;
+        case "Thursday":
+            echo"It's almost the weekend!";
+            break;
+        case "Friday":
+            echo"The weekend is here!";
+            break;
+        case "Saturday":
+            echo"Time to party";
+            break;
+        case "Sunday":
+            echo"Time to relax";
+            break;
+        default:
+            echo"{$date} is not a day";
+        
     }
 
-    echo"The ticket price is \${$ticket}";
 
 ?>
