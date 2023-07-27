@@ -14,51 +14,78 @@
 
 <?php
 
-    // if statement = if some condition is true, do something
-    //                if condition is false, don't do it
+    // Logical operators = combine conditional statements
+    // if(condition1 && condition2)
 
-    // $age = 125;
+    // && = True if both conditions are true
+    // || = True if at least one condition is true
+    //  ! = True if false. False if true.
 
-    // if ($age >= 100){
-    //     echo "You are too old to enter this site";
-    // }
-    // elseif ($age >= 18) {
-    //     echo "You may enter this site";
-    // }
-    // elseif ($age <= 0){
-    //     echo "That wasn't a valid age";
+    // $temp = 15;
+
+    // if($temp >= 0 && $temp <= 30){
+    //     echo"The weather is good.";
     // }
     // else{
-    //     echo "You must be 18+ to enter";
+    //     echo"The weather is bad.";
     // }
 
+    // $temp = -100;
+
+    // if($temp < 0 || $temp > 30){
+    //     echo"The weather is bad.";
+    // }
+    // else{
+    //     echo"The weather is good.";
+    // }
     
-    // $adult = true;
 
-    // if($adult) {
-    //     echo "You may enter this site";
+    // $temp = 15;
+    // $cloudy = true;
+
+    // if($cloudy){
+    //     echo"It's cloudy.";
     // }
     // else{
-    //     echo "You must be an adult to enter";
+    //     echo"It's sunny.";
+    // }
+
+    // if(!$cloudy){
+    //     echo"It's sunny.";
+    // }
+    // else{
+    //     echo"It's cloudy.";
+    // }
+
+    // $age = 12;
+    // $citizen = true;
+
+    // if($age >= 18 && $citizen){
+    //     echo"You can vote.";
+    // }
+    // else{
+    //     echo"You cannot vote.";
+    // }
+
+    // if(!($age >= 18) || !$citizen){
+    //     echo"You cannot vote.";
+    // }
+    // else{
+    //     echo"You can vote.";
     // }
 
 
-    $hours = 50;
-    $rate = 15;
-    $weekly_pay = null;
+    $child = false;
+    $senior = false;
+    $ticket = null;
 
-
-    if($hours <= 0 ){
-        $weekly_pay = 0;
-    }
-    elseif($hours <= 40){
-        $weekly_pay = $hours * $rate;
+    if($child || $senior){
+        $ticket = 10;
     }
     else{
-        $weekly_pay = ($rate * 40) + (($hours - 40) * ($rate * 1.5));
+        $ticket = 15;
     }
 
-    echo "You made \${$weekly_pay} this week";
-
+    echo"The ticket price is \${$ticket}";
 
 ?>
