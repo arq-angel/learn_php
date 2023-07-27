@@ -7,52 +7,42 @@
 </head>
 <body>
     
-    <!-- <form action="index.php" method="post">
-        <label>Enter a number to count to:</label>
-        <input type="text" name="counter">
-        <input type="submit" value="start">
-    </form> -->
-
     <form action="index.php" method="post">
-        <label>Enter a number to count down from:</label>
-        <input type="text" name="counter">
-        <input type="submit" value="start">
+        <input type="submit" name="stop" value="stop">
     </form>
+
 
 </body>
 </html>
 
 <?php
 
-    // for loop = repeat some code a certain # of times
+    // while loop = do some code infinitely while some
+    //              condition remains true
 
-    // for($i = 0;$i < 5;$i++){
-    //     echo"Hello <br>";
-    // }
-    
-    // for($i = 1;$i <= 100;$i++){
-    //     echo $i . "<br>";
-    // }
 
-    // for($i = 1;$i <= 100;$i+=3){
-    //     echo $i . "<br>";
+    // $counter = 0;
+
+    // while($counter < 10){
+    //     $counter++;
+    //     echo $counter . "<br>";
     // }
 
-    // for($i = 10;$i > 0;$i-=2){
-    //     echo $i . "<br>";
-    // }
+    $seconds = 0;
+    $running = true;
 
+    while($running){
+        
+        if(isset($_POST["stop"])){
+            $running = false;
+        }
 
-    // $counter = $_POST["counter"];
-
-    // for($i = 0; $i <= $counter; $i++){
-    //     echo $i . "<br>";
-    // }
-
-    $counter = $_POST["counter"];
-
-    for($i = $counter; $i > 0; $i--){
-        echo $i . "<br>";
+        //wait 1 second
+        $seconds++;
+        echo $seconds . "<br>";
     }
+
+
+    
 
 ?>
