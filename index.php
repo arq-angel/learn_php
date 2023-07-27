@@ -7,9 +7,6 @@
 </head>
 <body>
     
-    <form action="index.php" method="post">
-        <input type="submit" name="stop" value="stop">
-    </form>
 
 
 </body>
@@ -17,32 +14,25 @@
 
 <?php
 
-    // while loop = do some code infinitely while some
-    //              condition remains true
+    // array = "variable" whoch can hold more than one value at a time
+
+    $foods = array("apple", "orange", "banana", "coconut");
+
+    // echo $foods[0] . "<br>";
+    // echo $foods[1] . "<br>";
+    // echo $foods[2] . "<br>";
+    // echo $foods[3] . "<br>";
+
+    // $foods[0] = "pineapple";
+    // array_push($foods, "pineapple", "kiwi");
+    // array_pop($foods);
+    // array_shift($foods);
+    // $foods = array_reverse($foods);
+    // echo count($foods);
 
 
-    // $counter = 0;
-
-    // while($counter < 10){
-    //     $counter++;
-    //     echo $counter . "<br>";
-    // }
-
-    $seconds = 0;
-    $running = true;
-
-    while($running){
-        
-        if(isset($_POST["stop"])){
-            $running = false;
-        }
-
-        //wait 1 second
-        $seconds++;
-        echo $seconds . "<br>";
+    foreach($foods as $food){
+        echo $food . "<br>";
     }
-
-
-    
 
 ?>
