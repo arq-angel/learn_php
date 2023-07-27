@@ -7,69 +7,52 @@
 </head>
 <body>
     
+    <!-- <form action="index.php" method="post">
+        <label>Enter a number to count to:</label>
+        <input type="text" name="counter">
+        <input type="submit" value="start">
+    </form> -->
 
+    <form action="index.php" method="post">
+        <label>Enter a number to count down from:</label>
+        <input type="text" name="counter">
+        <input type="submit" value="start">
+    </form>
 
 </body>
 </html>
 
 <?php
 
-    //switch = replacement to using many elseif statements
-    //         more efficient, less code to write
+    // for loop = repeat some code a certain # of times
 
-    $grade = "A";
-
-    // switch($grade){
-    //     case "A":
-    //         echo"You did great";
-    //         break;
-    //     case "B":
-    //         echo"You did good";
-    //         break;
-    //     case "C":
-    //         echo"You did okay";
-    //         break;
-    //     case "D":
-    //         echo"You did poorly";
-    //         break;
-    //     case "F":
-    //         echo"You failes";
-    //         break;    
-    //     default:
-    //         echo"{$grade} is not valid";
+    // for($i = 0;$i < 5;$i++){
+    //     echo"Hello <br>";
+    // }
+    
+    // for($i = 1;$i <= 100;$i++){
+    //     echo $i . "<br>";
     // }
 
-    
-    // $date = date("1");   <-This didn't work
+    // for($i = 1;$i <= 100;$i+=3){
+    //     echo $i . "<br>";
+    // }
 
-    $date = "Monday";
+    // for($i = 10;$i > 0;$i-=2){
+    //     echo $i . "<br>";
+    // }
 
-    switch($date){
-        case "Monday":
-            echo"I hate Mondays";
-            break;
-        case "Tuesday":
-            echo"It is Taco Tuesday!";
-            break;
-        case "Wednesday":
-            echo"The work week is half over";
-            break;
-        case "Thursday":
-            echo"It's almost the weekend!";
-            break;
-        case "Friday":
-            echo"The weekend is here!";
-            break;
-        case "Saturday":
-            echo"Time to party";
-            break;
-        case "Sunday":
-            echo"Time to relax";
-            break;
-        default:
-            echo"{$date} is not a day";
-        
+
+    // $counter = $_POST["counter"];
+
+    // for($i = 0; $i <= $counter; $i++){
+    //     echo $i . "<br>";
+    // }
+
+    $counter = $_POST["counter"];
+
+    for($i = $counter; $i > 0; $i--){
+        echo $i . "<br>";
     }
-
 
 ?>
