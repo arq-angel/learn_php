@@ -8,7 +8,13 @@
 <body>
     
     <form action="index.php" method="post">
-
+        username:<br>
+        <input type="text" name="username"><br>
+        age:<br>
+        <input type="text" name="age"><br>
+        email:<br>
+        <input type="email" name="email"><br>
+        <input type="submit" name="login" value="login">
     </form>
 
 </body>
@@ -16,41 +22,45 @@
 
 <?php
 
-    // $username = "   Bro The Code   ";
-    $username = array("Bro", "The", "Code");
-    $phone = "123-456-789";
+    if(isset($_POST["login"])){
+
+        // $username = $_POST["username"];
+
+        // $username = filter_input(INPUT_POST, "username", 
+        //                          FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        // $age = filter_input(INPUT_POST, "age", 
+        //                          FILTER_SANITIZE_NUMBER_INT);
+
+        // $email = filter_input(INPUT_POST, "email", 
+        //                          FILTER_SANITIZE_EMAIL);
+
+        // echo "Hello {$username} <br>";
+        // echo "You are {$age} years old <br>";
+        // echo "Your email address is: {$email} <br>";
 
 
-    // $username = strtolower($username);
-    // $username = strtoupper($username);
-    // $username = trim($username);
-    // $username = str_pad($username, 20, "0");
-    // $phone = str_replace("-", "", $phone);
-    // $username = strrev($username);
-    // $username = str_shuffle($username);
-    // $equals = strcmp($username, "Bro Code");
-    // $count = strlen($phone);
-    // $index = strpos($phone, "-");
-    // $firstname = substr($username, 0, 3);
-    // $lastname = substr($username, 4);
-    // $fullname = explode(" ", $username);
-    $username = implode("-", $username);
+        $age = filter_input(INPUT_POST, "age",
+                            FILTER_VALIDATE_INT);
+
+        $email = filter_input(INPUT_POST, "email",
+                            FILTER_VALIDATE_EMAIL);
 
 
-    // echo $username;
-    // echo $phone;
-    // echo $equals;
-    // echo $count;
-    // echo $firstname;
-    // echo $lastname;
-    // echo $fullname;
+        if(empty($age)){
+            echo"That number wasn't valid <br>";
+        }
+        else{
+            echo"You are {$age} years old <br>";
+        }
 
-    // foreach($fullname as $name){
-    //     echo $name . "<br>";
-    // }
+        if(empty($email)){
+            echo"Your email wasn't valid <br>";
+        }
+        else{
+            echo"Your email address is: {$email} <br>";
+        }
 
-    echo $username;
-
-
+    }
 
 ?>
