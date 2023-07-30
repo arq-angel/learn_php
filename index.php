@@ -16,38 +16,41 @@
 
 <?php
 
-    // function = write some code once, reuse when you need it
-    //            type () after function name to invoke
-    //            ex. add() subtract() multiply() divide()
+    // $username = "   Bro The Code   ";
+    $username = array("Bro", "The", "Code");
+    $phone = "123-456-789";
 
 
-    // function happy_birthday($first_name, $age){
-    //     echo"Happy Birthday dear {$first_name}! <br>";
-    //     echo"Happy Birthday to you! <br>";
-    //     echo"Happy Birthday dear {$first_name}! <br>";
-    //     echo"You are {$age} years old! <br><br>";
+    // $username = strtolower($username);
+    // $username = strtoupper($username);
+    // $username = trim($username);
+    // $username = str_pad($username, 20, "0");
+    // $phone = str_replace("-", "", $phone);
+    // $username = strrev($username);
+    // $username = str_shuffle($username);
+    // $equals = strcmp($username, "Bro Code");
+    // $count = strlen($phone);
+    // $index = strpos($phone, "-");
+    // $firstname = substr($username, 0, 3);
+    // $lastname = substr($username, 4);
+    // $fullname = explode(" ", $username);
+    $username = implode("-", $username);
+
+
+    // echo $username;
+    // echo $phone;
+    // echo $equals;
+    // echo $count;
+    // echo $firstname;
+    // echo $lastname;
+    // echo $fullname;
+
+    // foreach($fullname as $name){
+    //     echo $name . "<br>";
     // }
 
-    // happy_birthday("Spongebob", 30);
-    // happy_birthday("Patrick", 35);
-    // happy_birthday("Squidward", 45);
+    echo $username;
 
-
-    // function is_even($number){
-    //     // $result = $number % 2;
-    //     // return $result;
-
-    //     return $number % 2;
-    // }
-
-    // echo is_even(10);
-
-    function hypotenuse(float $a, float $b){
-        $c = sqrt($a ** 2 + $b ** 2);
-        return $c;
-    }
-
-    echo hypotenuse(4, 5);
 
 
 ?>
