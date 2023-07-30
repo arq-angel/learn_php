@@ -8,60 +8,67 @@
 <body>
     
     <form action="index.php" method="post">
-        <label>Enter a country</label>
-        <input type="text" name="country">
-        <input type="submit">
+        <label>username: </label>
+        <input type="text" name="username"><br>
+        <label>password: </label>
+        <input type="password" name="password"><br>
+        <input type="submit" name="login" value="Log in"><br>
     </form>
-
 
 </body>
 </html>
 
 <?php
 
-    // associative array = An array made of key=>value pairs
+    // isset() = Returns True if a variable is declared and not null
+    // empty() = Returns True if a variable is not declared, false, null, ""
 
-    // countries => capitals
-    // id => username
-    // item => price
+    // $username = "BroCode";
 
-    $capitals = array("USA"=>"Washington D.C.",
-                      "Japan"=>"Kyoto", 
-                      "South Korea"=>"Seoul", 
-                      "India"=>"Delhi");
+    // $username = "";
+    // $username = false;
 
+    // echo isset($username);
 
-    // echo $capitals["USA"];
-
-    // $capitals["USA"] = "Las Vegas";
-    // $capitals["China"] = "Beijing";
-    // array_pop($capitals);
-    // array_shift($capitals);
-
-    // $keys = array_keys($capitals);
-    // foreach($keys as $key){
-    //     echo"{$key} <br>";
+    // if(isset($username)){
+    //     echo"This variable is set";
+    // }
+    // else{
+    //     echo"This variable is NOT set";
     // }
 
-    // $values = array_values($capitals);
-    // foreach($values as $value){
-    //     echo"{$value} <br>";
+    // if(empty($username)){
+    //     echo"This variable is empty";
     // }
-
-    // $capitals = array_flip($capitals);
-    // $capitals = array_reverse($capitals);
-    // echo count($capitals);
-
-
-    // foreach($capitals as $key => $value){
-    //     echo"{$key} = {$value} <br>";
+    // else{
+    //     echo"This variable is NOT empty";
     // }
 
 
-    $country = $_POST["country"];
-    $capital = $capitals[$_POST["country"]];
-    
-    echo "The capital of {$country} is {$capital}";
-    
+    foreach($_POST as $key => $value){
+        echo"{$key} = {$value} <br>";
+    }
+
+
+
+    if(isset($_POST["login"])){
+
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        if(empty($username)){
+            echo"Username is missing";
+        }
+        elseif(empty($password)){
+            echo"Password is missing";
+        }
+        else{
+            echo"Hello {$username}";
+        }
+    }
+
+
+
+
 
 ?>
