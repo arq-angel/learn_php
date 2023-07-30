@@ -8,27 +8,6 @@
 <body>
     
     <form action="index.php" method="post">
-        <!-- <input type="checkbox" name="pizza" value="Pizza">
-        Pizza<br>
-        <input type="checkbox" name="hamburger" value="Hamburger">
-        Hamburger<br>
-        <input type="checkbox" name="hotdog" value="Hotdog">
-        Hotdog<br>
-        <input type="checkbox" name="taco" value="Taco">
-        Taco<br>
-        <input type="submit" name="submit"> -->
-
-        <input type="checkbox" name="foods[]" value="Pizza">
-        Pizza<br>
-        <input type="checkbox" name="foods[]" value="Hamburger">
-        Hamburger<br>
-        <input type="checkbox" name="foods[]" value="Hotdog">
-        Hotdog<br>
-        <input type="checkbox" name="foods[]" value="Taco">
-        Taco<br>
-        <input type="submit" name="submit">
-
-
 
     </form>
 
@@ -37,43 +16,38 @@
 
 <?php
 
-    if(isset($_POST["submit"])){
-
-        // if(isset($_POST["pizza"])){
-        //     echo"You like pizza! <br>";
-        // }
-        // if(isset($_POST["hamburger"])){
-        //     echo"You like hamburger! <br>";
-        // }
-        // if(isset($_POST["hotdog"])){
-        //     echo"You like hotdog! <br>";
-        // }
-        // if(isset($_POST["taco"])){
-        //     echo"You like taco! <br>";
-        // }
-
-        // if(empty($_POST["pizza"])){
-        //     echo"You DON'T like pizza! <br>";
-        // }
-        // if(empty($_POST["hamburger"])){
-        //     echo"You DON'T like hamburger! <br>";
-        // }
-        // if(empty($_POST["hotdog"])){
-        //     echo"You DON'T like hotdog! <br>";
-        // }
-        // if(empty($_POST["taco"])){
-        //     echo"You DON'T like taco! <br>";
-        // }
-
-        $foods = $_POST["foods"];
-
-        // echo $foods[0];
-
-        foreach($foods as $food){
-            echo $food . "<br>";
-        }
+    // function = write some code once, reuse when you need it
+    //            type () after function name to invoke
+    //            ex. add() subtract() multiply() divide()
 
 
+    // function happy_birthday($first_name, $age){
+    //     echo"Happy Birthday dear {$first_name}! <br>";
+    //     echo"Happy Birthday to you! <br>";
+    //     echo"Happy Birthday dear {$first_name}! <br>";
+    //     echo"You are {$age} years old! <br><br>";
+    // }
+
+    // happy_birthday("Spongebob", 30);
+    // happy_birthday("Patrick", 35);
+    // happy_birthday("Squidward", 45);
+
+
+    // function is_even($number){
+    //     // $result = $number % 2;
+    //     // return $result;
+
+    //     return $number % 2;
+    // }
+
+    // echo is_even(10);
+
+    function hypotenuse(float $a, float $b){
+        $c = sqrt($a ** 2 + $b ** 2);
+        return $c;
     }
+
+    echo hypotenuse(4, 5);
+
 
 ?>
