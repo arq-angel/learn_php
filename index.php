@@ -1,3 +1,14 @@
+<?php
+
+    // include() = Copies the content of a file (php/html/text)
+    //             and includes it in your php file.
+    //             Sections of our website become reusable
+    //             Changes only need to be made in one place
+
+    include("header.html");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,61 +17,13 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form action="index.php" method="post">
-        username:<br>
-        <input type="text" name="username"><br>
-        age:<br>
-        <input type="text" name="age"><br>
-        email:<br>
-        <input type="email" name="email"><br>
-        <input type="submit" name="login" value="login">
-    </form>
-
+    This is the Home Page<br>
+    Stuff about your home page can go here<br>
 </body>
 </html>
 
 <?php
 
-    if(isset($_POST["login"])){
-
-        // $username = $_POST["username"];
-
-        // $username = filter_input(INPUT_POST, "username", 
-        //                          FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-        // $age = filter_input(INPUT_POST, "age", 
-        //                          FILTER_SANITIZE_NUMBER_INT);
-
-        // $email = filter_input(INPUT_POST, "email", 
-        //                          FILTER_SANITIZE_EMAIL);
-
-        // echo "Hello {$username} <br>";
-        // echo "You are {$age} years old <br>";
-        // echo "Your email address is: {$email} <br>";
-
-
-        $age = filter_input(INPUT_POST, "age",
-                            FILTER_VALIDATE_INT);
-
-        $email = filter_input(INPUT_POST, "email",
-                            FILTER_VALIDATE_EMAIL);
-
-
-        if(empty($age)){
-            echo"That number wasn't valid <br>";
-        }
-        else{
-            echo"You are {$age} years old <br>";
-        }
-
-        if(empty($email)){
-            echo"Your email wasn't valid <br>";
-        }
-        else{
-            echo"Your email address is: {$email} <br>";
-        }
-
-    }
+    include("footer.html");
 
 ?>
